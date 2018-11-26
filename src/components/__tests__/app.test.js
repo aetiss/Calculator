@@ -16,4 +16,4 @@ it ('show a screen component', ()=>{
 
 it('shows keypad component', ()=>{
  expect(wrapped.find(Keypad).length).toEqual(1);
-})
+}) 
