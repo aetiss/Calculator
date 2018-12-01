@@ -1,21 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import React from "react";
+import PropTypes from "prop-types";
 class Screen extends React.Component {
- constructor(props) {
-  super(props);
-  this.state = {};
- }
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayText: ""
+    };
+  }
 
- render() {
-  return (
-   <div>
-    <input type="text" name="screen" />
-   </div>
-  );
- }
+  handleChange = event => {
+    this.setState({ displayText: event.target.value });
+  };
+
+  render() {
+    return (
+      <div className="card mt-5 w-50">
+        <div className="card-body text-right">{this.props.value}</div>
+      </div>
+    );
+  }
 }
 
-Screen.propTypes = {};
+Screen.propTypes = {
+  value: PropTypes.string
+};
 
 export default Screen;
